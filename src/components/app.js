@@ -4,6 +4,8 @@ import List from './list';
 import AddItem from './add_item';
 import 'materialize-css/dist/js/materialize';
 import dummyList from "../data/to_do_list";
+import { randomString } from '../helpers/indexhelper';
+
 
 class App extends Component {
     state = {
@@ -17,8 +19,9 @@ class App extends Component {
 
     addItem = (item) => {
         const {list} = this.state;
+        item._id = randomString();
         this.setState({
-            list: [item, ...list],
+            list: [{...item, _id: randomString()}, ...list],
         });
     };
 

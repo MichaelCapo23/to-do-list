@@ -6,11 +6,20 @@ class AddItem extends Component {
        details: '',
     };
 
+    reset =() => {
+        this.setState({
+            title: '',
+            details: "",
+        })
+    };
+
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
         this.props.add(this.state);
+        this.reset()
     };
+
+
 
     render() {
         const {title, details} = this.state;
@@ -28,7 +37,7 @@ class AddItem extends Component {
                 </div>
                 <div className={"row"}>
                     <div className="col s6 center">
-                        <button  type={"button"} className={"btn red waves-effect waves-light"}>Cancel</button>
+                        <button onClick={this.reset} type={"button"} className={"btn red waves-effect waves-light"}>Cancel</button>
                     </div>
                     <div className="col s6 center">
                         <button className={"btn green waves-effect waves-light"}>Add Item</button>
