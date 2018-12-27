@@ -5,9 +5,8 @@ import AddItem from './add_item';
 import 'materialize-css/dist/js/materialize';
 import axios from 'axios';
 import {Route} from 'react-router-dom';
-
-const Base_URL = 'http://api.reactprototypes.com/todos';
-const API_KEY = '?key=c1018_IFeelThat';
+import ViewItem from "./view_item"
+import {Base_URL, API_KEY} from '../config/api'
 
 class App extends Component {
     state = {
@@ -63,6 +62,8 @@ class App extends Component {
                 <Route path={"/Add-item"} render={(props) => {
                     return <AddItem {...props} add={this.addItem}/>
                 }}/>
+
+                <Route path={"/item/:item_id"} component={ViewItem}/>
             </div>
         );
     }
