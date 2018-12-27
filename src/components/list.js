@@ -4,7 +4,7 @@ import NavButton from './nav_buuton'
 
 const List = (props) => {
     const listElements = props.toDos.map(item => {
-        return <ListItem toggle={() => props.toggle(item._id)} delete={() => props.delete(item._id)} key={item._id} title={item.title} description={item.description} complete={item.complete}/>
+        return <ListItem itemId={item._id} toggle={() => props.toggle(item._id)} delete={() => props.delete(item._id)} key={item._id} title={item.title} description={item.description} complete={item.complete}/>
     });
     return (
         <div>
