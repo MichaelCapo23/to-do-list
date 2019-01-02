@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NavButton from './nav_buuton';
+import NavButton from './nav_button';
 
 class AddItem extends Component {
     state = {

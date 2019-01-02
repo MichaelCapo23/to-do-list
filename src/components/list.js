@@ -1,6 +1,6 @@
 import React from 'react';
 import ListItem from './list_item'
-import NavButton from './nav_buuton'
+import NavButton from './nav_button'
 
 const List = (props) => {
     const listElements = props.toDos.map(item => {
